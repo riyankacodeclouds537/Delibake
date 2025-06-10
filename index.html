@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delibake</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+</head>
+<body class="bg-[#fff0f5] text-gray-800 scroll-smooth">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-6 py-4 fixed top-0 left-0 w-full bg-[#ffffff] shadow z-50">
+    <div class="text-3xl font-bold text-pink-700">Delibake</div>
+  
+    <nav class="hidden md:flex space-x-8 text-base text-pink-700 items-center relative">
+      <a href="#home" class="hover:text-pink-500 transition">Home</a>
+  
+      <!-- Dropdown: Cakes -->
+      <div class="relative group">
+        <button class="hover:text-pink-500 transition">Cakes <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+        <div class="absolute left-0 top-full bg-white shadow-md rounded mt-2 hidden group-hover:block z-10 min-w-[160px]">
+          <a href="#birthday" class="block px-4 py-2 hover:bg-pink-100">Birthday Cakes</a>
+          <a href="#wedding" class="block px-4 py-2 hover:bg-pink-100">Wedding Cakes</a>
+          <a href="#cupcakes" class="block px-4 py-2 hover:bg-pink-100">Cupcakes</a>
+          <a href="#custom" class="block px-4 py-2 hover:bg-pink-100">Custom Cakes</a>
+        </div>
+      </div>
+  
+      <a href="#about" class="hover:text-pink-500 transition">About Us</a>
+      <a href="#features" class="hover:text-pink-500 transition">Features</a>
+  
+      <!-- Dropdown: Pages -->
+      <div class="relative group">
+        <button class="hover:text-pink-500 transition">Pages <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+        <div class="absolute left-0 top-full bg-white shadow-md rounded mt-2 hidden group-hover:block z-10 min-w-[160px]">
+          <a href="#gallery" class="block px-4 py-2 hover:bg-pink-100">Gallery</a>
+          <a href="#blog" class="block px-4 py-2 hover:bg-pink-100">Blog</a>
+          <a href="#faq" class="block px-4 py-2 hover:bg-pink-100">FAQ</a>
+        </div>
+      </div>
+  
+      <a href="#contact" class="hover:text-pink-500 transition">Contact</a>
+    </nav>
+  
+    <!-- Icons and Buttons -->
+    <div class="hidden md:flex items-center space-x-5 text-pink-700 text-xl">
+      <i class="fas fa-search hover:text-pink-500 cursor-pointer"></i>
+      <i class="fas fa-heart hover:text-pink-500 cursor-pointer"></i>
+      <i class="fas fa-shopping-cart hover:text-pink-500 cursor-pointer"></i>
+      <i class="fas fa-user-circle hover:text-pink-500 cursor-pointer text-2xl"></i>
+  
+      <!-- Auth Buttons -->
+      <!-- <button class="hover:text-pink-500 transition text-base">Sign In</button> -->
+      <button class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-400 transition text-base">Sign Up</button>
+    </div>
+  </header>
+  
+
+  <!-- Hero Section -->
+  <section id="home" class="relative pt-24 h-screen flex items-center justify-between px-6 md:px-20 bg-[#FFE9EE] overflow-hidden">
+    <!-- Decorations -->
+    <div class="absolute inset-0 bg-[url('/assets/bg-pattern.png')] bg-cover bg-no-repeat opacity-10 pointer-events-none"></div>
+
+    <!-- Text Content -->
+    <div class="z-10 flex-1 text-left space-y-6">
+      <h3 class="text-lg md:text-xl text-pink-600 italic">All For A Special Day</h3>
+      <h1 class="text-5xl md:text-6xl font-bold text-pink-800 leading-tight">Delight Cake Shop</h1>
+      <p class="text-md md:text-lg text-gray-700 max-w-md">
+        Celebrate moments with our handcrafted cakes, cupcakes & desserts made with love.
+      </p>
+      <button class="bg-pink-500 text-white px-6 py-3 rounded-lg hover:bg-pink-400 transition font-semibold shadow-md">
+        Shop Now
+      </button>
+      <button class="bg-pink-500 text-white px-6 py-3 rounded-lg hover:bg-pink-400 transition font-semibold shadow-md">
+        View Cakes
+      </button>
+    </div>
+
+    <!-- Cake Image -->
+    <div class="z-10 flex-1 hidden md:flex justify-center items-center">
+      <img src="/images/cake_hero_1.png" alt="Cupcake" class="w-[350px]"/>
+    </div>
+  </section>
+
+  
+ <!-- Cake Categories Section -->
+<section id="cakes" class="py-20 px-6 md:px-20 bg-[#fff0f5]">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl md:text-5xl font-bold text-pink-800 mb-4">Cake Categories</h2>
+    <p class="text-gray-600 max-w-xl mx-auto">
+      Explore our delicious selection of cake categories, perfect for every celebration and sweet moment.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    <!-- Category Card -->
+    <div class="category-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-700 transform opacity-0 translate-y-6 hover:shadow-pink-200">
+      <img src="./images/heart_love_chocolate_rose_cake.png" alt="Birthday Cakes" class="w-full h-82 object-cover">
+      <div class="p-6 text-center">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">Birthday Cakes</h3>
+        <p class="text-gray-600 text-sm">Make every birthday sweeter with our custom-designed cakes.</p>
+      </div>
+    </div>
+
+    <div class="category-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-700 transform opacity-0 translate-y-6 hover:shadow-pink-200">
+      <img src="./images/wedding cakes.jpg" alt="Wedding Cakes" class="w-full h-82 object-cover">
+      <div class="p-6 text-center">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">Wedding Cakes</h3>
+        <p class="text-gray-600 text-sm">Elegant, romantic cakes tailored for your special day.</p>
+      </div>
+    </div>
+
+    <div class="category-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-700 transform opacity-0 translate-y-6 hover:shadow-pink-200">
+      <img src="./images/vanilla_cupcake.jpg" alt="Cupcakes" class="w-full h-82 object-cover">
+      <div class="p-6 text-center">
+        <h3 class="text-xl font-semibold text-pink-700 mb-2">Cupcakes</h3>
+        <p class="text-gray-600 text-sm">Mini delights with maximum flavor, perfect for any occasion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- About Section -->
+<!-- About Section -->
+<section id="about" class="py-20 px-6 md:px-20 bg-white">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    
+    <!-- Text Content -->
+    <div>
+      <h2 class="text-4xl md:text-5xl font-bold text-pink-800 mb-4">Dwell into a world of sweets</h2>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+        Welcome to our bakery, where the warmth of fresh-baked goods and the love of tradition come together. 
+        We’re passionate about creating treats that bring joy to your everyday moments and special occasions.
+      </p>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+        Our philosophy is simple: quality ingredients, time-honored recipes, and a touch of creativity. 
+        From flaky pastries and artisan breads to decadent cakes and cookies, everything we make is crafted with care and attention to detail.
+      </p>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+        Thank you for letting us be a part of your day. We look forward to sharing the joy of baking with you!
+      </p>
+    </div>
+
+    <!-- Image Content -->
+    <div class="relative flex justify-center">
+      <!-- Pink blob background -->
+      <div class="absolute w-96 h-96 bg-pink-200 rounded-full blur-3xl top-0 left-0 -z-10"></div>
+      <!-- Actual image -->
+      <img src="./images/cake 3.jpg" alt="Cake Slice" class="w-[300px] md:w-[350px] rounded-lg shadow-lg z-10">
+    </div>
+
+  </div>
+</section>
+
+<!-- Featured Gallery with Prices, Wishlist, and Cart Button -->
+<section id="gallery" class="py-20 px-6 md:px-20 bg-[#FFE9EE]">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl md:text-5xl font-bold text-pink-800">Our Creations</h2>
+    <br>
+    <p class="text-gray-600 max-w-2xl mx-auto">From dreamy wedding tiers to whimsical cupcakes—see what we create with love.</p>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+    <!-- Product Card -->
+    <div class="relative bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+      <!-- Heart Icon -->
+      <div class="absolute top-3 right-3 text-pink-600 text-xl cursor-pointer hover:text-pink-400 z-10">
+        <i class="fas fa-heart"></i>
+      </div>
+
+      <img src="./images/cupcake 2.jpg" alt="Cupcake Delight" class="w-full h-[280px] object-cover rounded-t-lg" />
+
+      <div class="p-5 text-center">
+        <h3 class="text-xl font-semibold text-pink-700">Cupcake Delight</h3>
+        <p class="text-gray-700 mt-2 text-base">$4.99</p>
+        <button class="mt-4 bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product Card -->
+    <div class="relative bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+      <div class="absolute top-3 right-3 text-pink-600 text-xl cursor-pointer hover:text-pink-400 z-10">
+        <i class="fas fa-heart"></i>
+      </div>
+
+      <img src="./images/cake hero 1.png" alt="Chocolate Dream Cake" class="w-full h-[280px] object-cover rounded-t-lg" />
+
+      <div class="p-5 text-center">
+        <h3 class="text-xl font-semibold text-pink-700">Chocolate Dream Cake</h3>
+        <p class="text-gray-700 mt-2 text-base">$24.99</p>
+        <button class="mt-4 bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product Card -->
+    <div class="relative bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+      <div class="absolute top-3 right-3 text-pink-600 text-xl cursor-pointer hover:text-pink-400 z-10">
+        <i class="fas fa-heart"></i>
+      </div>
+
+      <img src="./images/cake gallery 3.jpg" alt="Rainbow Layer Cake" class="w-full h-[280px] object-cover rounded-t-lg" />
+
+      <div class="p-5 text-center">
+        <h3 class="text-xl font-semibold text-pink-700">Rainbow Layer Cake</h3>
+        <p class="text-gray-700 mt-2 text-base">$19.99</p>
+        <button class="mt-4 bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Product Card -->
+    <div class="relative bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+      <div class="absolute top-3 right-3 text-pink-600 text-xl cursor-pointer hover:text-pink-400 z-10">
+        <i class="fas fa-heart"></i>
+      </div>
+
+      <img src="./images/cupcakes.jpg" alt="Party Cupcakes Pack" class="w-full h-[280px] object-cover rounded-t-lg" />
+
+      <div class="p-5 text-center">
+        <h3 class="text-xl font-semibold text-pink-700">Party Cupcakes Pack</h3>
+        <p class="text-gray-700 mt-2 text-base">$9.99</p>
+        <button class="mt-4 bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Features Section -->
+<section id="features" class="py-20 px-6 md:px-20 bg-white">
+  <div class="max-w-4xl mx-auto text-center mb-12">
+    <h2 class="text-4xl md:text-5xl font-bold text-pink-800">Why Choose Delibake?</h2>
+    <br>
+    <p class="text-gray-600">Because every slice is baked with care, creativity, and love for your celebrations.</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+    <div class="p-6 bg-pink-50 rounded-xl shadow-md">
+      <i class="fas fa-leaf text-pink-500 text-4xl mb-4"></i>
+      <h3 class="font-semibold text-xl mb-2">Natural Ingredients</h3>
+      <p class="text-gray-600">Only the freshest, premium ingredients make it into our recipes.</p>
+    </div>
+    <div class="p-6 bg-pink-50 rounded-xl shadow-md">
+      <i class="fas fa-award text-pink-500 text-4xl mb-4"></i>
+      <h3 class="font-semibold text-xl mb-2">Award-Winning Recipes</h3>
+      <p class="text-gray-600">Our secret recipes have been baking smiles for years.</p>
+    </div>
+    <div class="p-6 bg-pink-50 rounded-xl shadow-md">
+      <i class="fas fa-birthday-cake text-pink-500 text-4xl mb-4"></i>
+      <h3 class="font-semibold text-xl mb-2">Custom Orders</h3>
+      <p class="text-gray-600">Your unique vision is our baking challenge—catered to your taste.</p>
+    </div>
+    <div class="p-6 bg-pink-50 rounded-xl shadow-md">
+      <i class="fas fa-truck text-pink-500 text-4xl mb-4"></i>
+      <h3 class="font-semibold text-xl mb-2">Fast Delivery</h3>
+      <p class="text-gray-600">Warm cakes delivered right to your doorstep on schedule.</p>
+    </div>
+  </div>
+</section>
+<!-- Newsletter -->
+<!-- <section id="newsletter" class="py-16 px-6 md:px-20 bg-pink-50">
+  <div class="max-w-xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-pink-800 mb-4">Stay Sweet, Stay Updated!</h2>
+    <p class="text-gray-600 mb-6">Join our newsletter to get exclusive deals and seasonal specials.</p>
+    <form class="flex flex-col sm:flex-row gap-4">
+      <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-pink-300" />
+      <button type="submit" class="bg-pink-500 text-white px-6 py-3 rounded-lg hover:bg-pink-400 transition font-medium">Subscribe</button>
+    </form>
+  </div>
+</section> -->
+
+
+<!-- Testimonial Section -->
+<section id="testimonials" class="py-20 px-6 md:px-20 bg-pink-200">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-bold text-pink-800 mb-10">What Our Customers Say</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <p class="text-gray-600 italic mb-4">“Delibake made our wedding day extra special. The cake was stunning and tasted even better!”</p>
+        <h4 class="font-semibold text-pink-700">– Sarah & James</h4>
+      </div>
+      <div class="bg-white shadow-lg rounded-xl p-6">
+        <p class="text-gray-600 italic mb-4">“Absolutely love the cupcakes! They're our go-to treat for every celebration.”</p>
+        <h4 class="font-semibold text-pink-700">– Ayesha M.</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-6 md:px-20 bg-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-bold text-pink-800 mb-6">Contact Us</h2>
+    <p class="text-lg text-gray-700 mb-10">
+      Whether you have a question, a custom cake request, or simply want to connect—we’d be delighted to hear from you.
+    </p>
+
+    <form class="grid gap-6 md:grid-cols-2 text-left">
+      <input 
+        type="text" 
+        placeholder="Full Name" 
+        class="col-span-2 md:col-span-1 w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300" 
+        required
+      />
+      <input 
+        type="email" 
+        placeholder="Email Address" 
+        class="col-span-2 md:col-span-1 w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300" 
+        required
+      />
+      <textarea 
+        rows="5" 
+        placeholder="Your Message" 
+        class="col-span-2 w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-300 resize-none" 
+        required
+      ></textarea>
+      <div class="col-span-2 text-center">
+        <button 
+          type="submit" 
+          class="bg-pink-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-pink-400 transition duration-300 shadow-md"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+  
+  <!-- Footer -->
+<footer class="bg-pink-100 py-12 px-6 md:px-20 text-gray-800">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+    
+    <!-- Brand Info -->
+    <div>
+      <h3 class="text-2xl font-bold text-pink-700 mb-4">Delibake</h3>
+      <p class="text-sm">Spreading sweetness through beautifully crafted cakes and pastries for all your special moments.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-xl font-semibold text-pink-700 mb-3">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#home" class="hover:text-pink-500 transition">Home</a></li>
+        <li><a href="#cakes" class="hover:text-pink-500 transition">Cakes</a></li>
+        <li><a href="#about" class="hover:text-pink-500 transition">About Us</a></li>
+        <li><a href="#features" class="hover:text-pink-500 transition">Features</a></li>
+        <li><a href="#pages" class="hover:text-pink-500 transition">Pages</a></li>
+        <li><a href="#contact" class="hover:text-pink-500 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Support -->
+    <div>
+      <h4 class="text-xl font-semibold text-pink-700 mb-3">Customer Support</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-pink-500 transition">FAQs</a></li>
+        <li><a href="#" class="hover:text-pink-500 transition">Shipping Info</a></li>
+        <li><a href="#" class="hover:text-pink-500 transition">Privacy Policy</a></li>
+        <li><a href="#" class="hover:text-pink-500 transition">Return & Refund Policy</a></li>
+        <li><a href="#" class="hover:text-pink-500 transition">Terms & Conditions</a></li>
+        <li><a href="#" class="hover:text-pink-500 transition">Payment Options</a></li>
+        <li><a href="#" class="hover:text-pink-500 transition">Contact Support</a></li>
+        <li><a href="#" class="hover:text-pink-500 transition">Report an Issue</a></li>
+        
+
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h4 class="text-xl font-semibold text-pink-700 mb-3">Follow Us</h4>
+      <div class="flex space-x-4">
+        <a href="#" aria-label="Instagram" class="text-pink-700 hover:text-pink-500 transition">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3zm5 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm6-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="text-pink-700 hover:text-pink-500 transition">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.85v-6.96H8v-2.89h2.5V9.41c0-2.47 1.47-3.83 3.72-3.83 1.08 0 2.21.19 2.21.19v2.44h-1.25c-1.23 0-1.61.76-1.61 1.54v1.84H17l-.4 2.89h-2.1v6.96A10.002 10.002 0 0 0 22 12z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter" class="text-pink-700 hover:text-pink-500 transition">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.5.59-2.31.69a4.01 4.01 0 0 0 1.72-2.23c-.8.48-1.68.83-2.62 1a4.07 4.07 0 0 0-7 3.71c-3.38-.17-6.37-1.78-8.38-4.2a4.07 4.07 0 0 0-.55 2.06 4.06 4.06 0 0 0 1.8 3.38 4 4 0 0 1-1.85-.51v.05a4.08 4.08 0 0 0 3.26 3.99 4.11 4.11 0 0 1-1.84.07 4.1 4.1 0 0 0 3.83 2.84A8.17 8.17 0 0 1 2 18.58a11.5 11.5 0 0 0 6.29 1.84c7.55 0 11.68-6.26 11.68-11.7 0-.18 0-.35-.01-.52A8.24 8.24 0 0 0 22.46 6z"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-center text-sm mt-10 text-gray-600">
+    &copy; 2025 Delibake. All rights reserved.
+  </div>
+</footer>
+
+
+<script src="./js/script.js"></script>
+</body>
+</html>
